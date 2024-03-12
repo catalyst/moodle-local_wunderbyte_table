@@ -142,8 +142,7 @@ class provider implements \core_privacy\local\metadata\provider,
         foreach ($contextlist as $context) {
             if ($context->contextlevel == CONTEXT_SYSTEM) {
                 foreach (self::$tables as $table) {
-                    $sql = "DELETE FROM {$table} WHERE userid = :userid";
-                    $DB->execute($sql, ['userid' => $userid]);
+                    $DB->delete_records($table, ['userid' => $userid]);
                 }
             }
         }
