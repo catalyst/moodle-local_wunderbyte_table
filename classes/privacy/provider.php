@@ -125,7 +125,7 @@ class provider implements \core_privacy\local\metadata\provider,
         if ($context->contextlevel == CONTEXT_SYSTEM) {
             foreach (self::$tables as $table) {
                 // Delete the records from table
-                $DB->delete_records($table, null);
+                $DB->delete_records($table);
             }
         }
     }
